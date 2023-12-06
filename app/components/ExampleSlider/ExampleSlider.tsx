@@ -259,7 +259,7 @@ export const ExampleSlider = () => {
             onSwiper={(swiper) => console.log(swiper)}
           >
             {currentSlides?.map((slide) => (
-              <SwiperSlide className={styles.sliderCardCont}>
+              <SwiperSlide key={slide.title} className={styles.sliderCardCont}>
                 <div className={styles.sliderCard}>
                   <div className={styles.sliderCardVideo}></div>
                   <div className={styles.sliderCardTitle}>{slide.title}</div>
