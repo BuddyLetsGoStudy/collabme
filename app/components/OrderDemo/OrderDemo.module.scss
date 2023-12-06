@@ -1,0 +1,80 @@
+.cont {
+  display: flex;
+  max-width: 1440px;
+  margin: auto;
+  padding-top: 40px;
+}
+.image {
+  width: 50%;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../../../public/dama.png");
+  height: 532px;
+}
+
+.form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  row-gap: 12px;
+  padding-left: 60px;
+  box-sizing: border-box;
+
+  & > input {
+    border-radius: 4px;
+    border: 1px solid rgba(204, 96, 40, 0.15);
+    padding: 15px 20px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    min-width: 280px;
+    box-sizing: border-box;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+.title {
+  color: #333;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.policy {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  column-gap: 4px;
+
+  &Check {
+    width: 20px;
+    height: 20px;
+    background-image: url("../../../public/check.svg");
+  }
+
+  &Text {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    & > a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #000;
+    }
+  }
+}
+
+.success {
+  color: #333;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 150%;
+}

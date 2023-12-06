@@ -1,0 +1,39 @@
+.section {
+  height: 645px;
+  width: 100%;
+  background-image: url("../../../public/bg-trans.svg");
+  background-color: #bb2749;
+  background-size: 102%;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 40px;
+}
+
+.button {
+  border-radius: 30px;
+  background: #fff;
+  color: #bb2749;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 40px;
+  cursor: pointer;
+}

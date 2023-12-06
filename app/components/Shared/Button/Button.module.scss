@@ -1,0 +1,45 @@
+@import "../../../variables.scss";
+
+.button {
+  border: none;
+  border-radius: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  background: #bc284a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  text-decoration: none !important;
+  &:hover {
+    box-shadow: 6px 6px 0px 0px #b01035;
+  }
+}
+
+.sm {
+  padding: 15px 25px;
+  font-size: 14px;
+  text-decoration: none !important;
+
+  font-weight: 400;
+}
+
+.md {
+  text-decoration: none !important;
+
+  padding: 15px 40px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.outline {
+  text-decoration: none !important;
+
+  color: #cc6028;
+  background-color: transparent;
+  &:hover {
+    box-shadow: 6px 6px 0px 0px rgba(204, 96, 40, 0.1);
+  }
+}

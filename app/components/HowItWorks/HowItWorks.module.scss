@@ -1,0 +1,242 @@
+.how {
+  &Section {
+    &Cont {
+      width: 100%;
+      max-width: 1370px;
+      margin: auto;
+      box-sizing: border-box;
+    }
+    padding-top: 141px;
+  }
+  &Title {
+    color: #333;
+
+    font-size: 64px;
+    font-weight: 700;
+    text-align: center;
+  }
+  &Tabs {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 40px;
+    max-width: 100%;
+    height: 141px;
+  }
+  &Tab {
+    min-width: 50%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 0 85px 0 85px;
+    border-radius: 24px 24px 0px 0px;
+    background: #bb2749;
+    color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+    &White {
+      border-top: 2px solid #bb2749;
+      border-right: 2px solid #bb2749;
+      border-left: 2px solid #bb2749;
+      background: #fff;
+      color: #333;
+    }
+    &Selected {
+      height: 141px;
+    }
+    &Text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 140%;
+      max-width: 340px;
+    }
+
+    &Icon {
+      border: 1px solid white;
+      border-radius: 50%;
+      height: 52px;
+      width: 52px;
+      background-color: #bb2749;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: " ";
+        width: 25px;
+        height: 2px;
+        top: 25px;
+        left: 13px;
+        border-radius: 5px;
+        background: white;
+      }
+      &::before {
+        transition: 0.15s;
+        position: absolute;
+        content: " ";
+        width: 25px;
+        height: 2px;
+        top: 25px;
+        left: 13px;
+        border-radius: 5px;
+        background: white;
+        opacity: 0.5;
+      }
+
+      &Unactive {
+        &::before {
+          transform: rotate(90deg);
+          opacity: 1;
+        }
+      }
+    }
+
+    &Button {
+      min-width: 54px;
+      height: 54px;
+      background-color: white;
+      border-radius: 666px;
+      margin-left: 75px;
+      cursor: pointer;
+    }
+  }
+}
+
+.tabContent {
+  padding: 0 85px 75px;
+  transition: background-color 0.3s;
+  background-color: white;
+  border-radius: 0px 0px 45px 45px;
+  border-right: 2px solid #bb2749;
+  border-bottom: 2px solid #bb2749;
+  border-left: 2px solid #bb2749;
+
+  &Red {
+    background-color: #bb2749;
+  }
+}
+
+.step {
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 20px;
+  &Sub {
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 20px;
+    background: #f1f1f1;
+    margin: auto;
+    width: 86px;
+  }
+  &Title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 18px;
+    color: #fff;
+    text-align: center;
+    & > span {
+      color: #fff;
+      font-size: 36px;
+      font-style: italic;
+      font-weight: 400;
+      border-bottom: 2px solid #cc6028;
+      background: rgba(255, 255, 255, 0.25);
+      padding: 0 8px;
+    }
+  }
+  &Video {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 12px;
+    margin-top: 24px;
+    height: 440px;
+    background-size: 100%;
+
+    background-position: center;
+    &1 {
+      background-image: url("../../../public/stepvideo1.png");
+      box-shadow: 10px 10px 0px 0px #cc6028;
+      background-size: 103%;
+    }
+    &2 {
+      height: 551px;
+      margin: 24px auto 0;
+      width: 80%;
+      box-shadow: none;
+      background-image: url("../../../public/stepvideo2.png");
+    }
+    &3 {
+      background-size: cover;
+
+      background-image: url("../../../public/table_image.png");
+    }
+  }
+  &Tabs {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    &Container {
+      display: flex;
+      margin-top: 40px;
+      column-gap: 101px;
+    }
+    &Tab {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 16px 20px;
+      box-sizing: border-box;
+      border-bottom: 2px solid #e48f8e;
+      border-radius: 8px 12px 0px 0px;
+      color: white;
+      transition: 0.3s;
+      cursor: pointer;
+      &Active {
+        background: rgba(255, 248, 244, 0.25);
+        border-bottom-color: #fff;
+      }
+    }
+    &Content {
+      min-height: 405;
+      flex-grow: 1;
+      border-radius: 12px;
+      background: #f3f3f3;
+      background-size: cover;
+      background-position: center;
+      @for $i from 1 through 7 {
+        &#{$i} {
+          background-image: url("../../../public/contentTab#{$i}.png");
+        }
+      }
+    }
+  }
+}
+
+.stepWhite {
+  .step {
+    &Sub {
+      background: rgba(187, 39, 73, 0.25);
+      color: #333;
+    }
+    &Title {
+      color: #333;
+      & > span {
+        border-bottom: 1px solid #bb2749;
+        color: #333;
+        background: #fff8f4;
+      }
+    }
+    &Tabs {
+      &Tab {
+        border-bottom: 2px solid #e48f8e;
+        color: #333;
+        &Active {
+          background: rgba(187, 39, 73, 0.1);
+        }
+      }
+    }
+  }
+}

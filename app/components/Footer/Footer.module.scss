@@ -1,0 +1,120 @@
+.footer {
+  padding: 120px;
+  border-top: 2px solid #bb2749;
+
+  background: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.firstRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 118px;
+}
+
+.logo {
+  &Text {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+.feedback {
+  &Phone {
+    cursor: pointer;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 27px;
+    position: relative;
+    margin-bottom: 16px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      background-size: cover;
+      background-image: url("../../../public/phone.svg");
+    }
+  }
+  &Email {
+    cursor: pointer;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 27px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      background-size: cover;
+      background-image: url("../../../public/email.svg");
+    }
+  }
+}
+
+.social {
+  &Text {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 27px;
+  }
+  &Icons {
+    display: flex;
+    column-gap: 16px;
+    & > div {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &Fb {
+    background-image: url("../../../public/fb.svg");
+  }
+  &Ig {
+    background-image: url("../../../public/ig.svg");
+  }
+  &Tg {
+    background-image: url("../../../public/tg.svg");
+  }
+  &Vk {
+    background-image: url("../../../public/vk.svg");
+  }
+}
+
+.secondRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.policies {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  &Item {
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}

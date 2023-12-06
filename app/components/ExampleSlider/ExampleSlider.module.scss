@@ -1,0 +1,127 @@
+.section {
+  padding: 120px 0;
+}
+
+.slider {
+  &Cont {
+    width: 100%;
+  }
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  column-gap: 20px;
+
+  &Card {
+    &Cont {
+      width: fit-content;
+    }
+    width: 387px;
+    height: 484px;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    border: 1px solid rgba(204, 96, 40, 0.3);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+
+    &Video {
+      width: 339px;
+      height: 187px;
+      border-radius: 12px;
+      background: url("../../../public/sliderExamples1.png"), lightgray 50% / cover no-repeat;
+      box-shadow: 10px 10px 0px 0px #cc6028, 10px 10px 0px 0px #cc6028, 10px 10px 0px 0px #cc6028;
+      margin-bottom: 24px;
+    }
+    &Title {
+      color: #000;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    &Description {
+      color: #000;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+    &Button {
+      align-self: end;
+      margin-top: auto;
+      cursor: pointer;
+      color: #000;
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      padding-right: 18px;
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 2.5px;
+        width: 14px;
+        height: 14px;
+        background-image: url("../../../public/arrow-small-black-right.svg");
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.title {
+  color: #333;
+
+  text-align: center;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+.buttons {
+  column-gap: 8px;
+  width: fit-content;
+  display: flex;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid rgba(204, 96, 40, 0.3);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(3px);
+  color: #333;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  &Active {
+    color: white;
+    border-color: #bb2749;
+    background: #bb2749;
+    backdrop-filter: none;
+  }
+}
+
+.bullet {
+  background-color: rgba(204, 96, 40, 0.3);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 1 !important;
+  margin: 0 !important;
+  &Active {
+    background-color: #bb2749 !important;
+  }
+}
+
+.bulletsCont {
+  margin-top: 40px;
+  display: flex;
+  column-gap: 23px;
+}
