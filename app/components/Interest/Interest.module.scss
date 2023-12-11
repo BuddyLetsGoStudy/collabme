@@ -36,4 +36,60 @@
   font-weight: 500;
   padding: 15px 40px;
   cursor: pointer;
+  margin-top: 24px;
+}
+
+.input {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(204, 96, 40, 0.15);
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 12px;
+  outline: none;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+.policy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+
+  &Text {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 1px;
+    margin-left: 4px;
+    & > a {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 150%;
+      text-decoration: none;
+    }
+  }
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  background-image: url("../../../public/checkmarkk.svg");
+  cursor: pointer;
+  position: relative;
+  &Inactive {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 9px;
+      height: 9px;
+      left: 6px;
+      top: 6px;
+      background-color: #bb2749;
+    }
+  }
 }

@@ -12,6 +12,8 @@
   align-items: center;
   column-gap: 10px;
   text-decoration: none !important;
+  transition: 0.3s;
+  justify-content: center;
   &:hover {
     box-shadow: 6px 6px 0px 0px #b01035;
   }

@@ -10,6 +10,9 @@
   background-size: 100%;
   background-image: url("../../../public/dama.png");
   height: 532px;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .form {
@@ -56,6 +59,19 @@
     width: 20px;
     height: 20px;
     background-image: url("../../../public/check.svg");
+    position: relative;
+    cursor: pointer;
+    &Inactive {
+      &::after {
+        position: absolute;
+        content: "";
+        width: 9px;
+        height: 9px;
+        left: 6px;
+        top: 6px;
+        background-color: white;
+      }
+    }
   }
 
   &Text {

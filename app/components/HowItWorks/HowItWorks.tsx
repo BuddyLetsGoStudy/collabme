@@ -1,11 +1,8 @@
 "use client";
 import styles from "./HowItWorks.module.scss";
-import globalStyles from "../../page.module.scss";
-import { cls } from "../Shared/helpers/css";
 import classNames from "classnames";
+import Image from "next/image";
 import { useState } from "react";
-import { RedTab } from "./RedTab/RedTab";
-import { WhiteTab } from "./WhiteTab/WhiteTab";
 
 const tabs = [
   { text: "Тригерные рассылки", key: "trigger" },
@@ -24,25 +21,95 @@ export type TabType = {
 
 export const HowItWorks = () => {
   const [firstTab, setFirstTab] = useState<boolean>(true);
+  const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
 
   return (
     <div className={styles.howSectionCont} id={"howitworks"}>
       <section className={classNames(styles.howSection)}>
         <h2 className={styles.howTitle}>Как это работает?</h2>
-        <div className={styles.howTabs}>
-          <div className={classNames(styles.howTab, { [styles.howTabSelected]: firstTab })} onClick={() => setFirstTab(true)}>
-            <div className={styles.howTabText}>Посмотреть для компаний с большим количеством клиентов и данных</div>
-
-            <div className={classNames(styles.howTabIcon, { [styles.howTabIconUnactive]: !firstTab })} />
-          </div>
-          <div className={classNames(styles.howTab, styles.howTabWhite, { [styles.howTabSelected]: !firstTab })} onClick={() => setFirstTab(false)}>
-            <div className={styles.howTabText}>Посмотреть использование при точечном контакте</div>
-
-            <div className={classNames(styles.howTabIcon, { [styles.howTabIconUnactive]: firstTab })} />
-          </div>
-        </div>
       </section>
-      <div className={classNames(styles.tabContent, { [styles.tabContentRed]: firstTab })}>{firstTab ? <RedTab tabs={tabs} /> : <WhiteTab tabs={tabs} />}</div>
+      <div className={styles.howTabs}>
+        <div className={classNames(styles.howTab, { [styles.howTabSelected]: firstTab })} onClick={() => setFirstTab(true)}>
+          <div className={styles.howTabText}>Посмотреть для компаний с большим количеством клиентов и данных</div>
+
+          <div className={classNames(styles.howTabIcon, { [styles.howTabIconUnactive]: !firstTab })} />
+        </div>
+        <div className={classNames(styles.howTab, styles.howTabWhite, { [styles.howTabSelected]: !firstTab })} onClick={() => setFirstTab(false)}>
+          <div className={styles.howTabText}>Посмотреть использование при точечном контакте</div>
+          <div className={classNames(styles.howTabIcon, { [styles.howTabIconUnactive]: firstTab })} />
+        </div>
+      </div>
+      <div className={classNames(styles.tabContent, { [styles.tabContentWhite]: !firstTab })}>
+        <section className={classNames(styles.step)}>
+          <div className={styles.stepSubCont}>
+            <div className={styles.stepSubLineCont}>
+              <div className={styles.stepSubLine}></div>
+            </div>
+            <div className={styles.stepSub}>Шаг 1</div>
+            <div className={styles.stepSubEmpty}></div>
+          </div>
+          <h3 className={styles.stepTitle}>
+            Запиши всего лишь <span>одно</span> видео с основным посылом,
+            <br /> которым ты хочешь поделиться
+          </h3>
+          <div className={classNames(styles.stepVideo)}>
+            <Image alt="nice" src="/stepvideo1.png" fill className={styles.stepVideoImage} />
+          </div>
+        </section>
+        <section className={classNames(styles.contentOffset, styles.step)}>
+          <div className={styles.stepSubCont}>
+            <div className={styles.stepSubLineCont}>
+              <div className={styles.stepSubLine}></div>
+            </div>
+            <div className={styles.stepSub}>Шаг 2</div>
+            <div className={styles.stepSubEmpty}></div>
+          </div>
+          <h3 className={styles.stepTitle}>
+            Добавь видео на платформу и выдели <span>любые</span> слова для создания шаблона под персонализированные видео для каждого пользователя и клиента
+          </h3>
+          <div className={classNames(styles.stepVideo)}>
+            <Image alt="nice" src="/stepvideo2.png" fill className={styles.stepVideoImage} />
+          </div>
+        </section>
+        {firstTab && (
+          <section className={classNames(styles.contentOffset, styles.step)}>
+            <div className={styles.stepSubCont}>
+              <div className={styles.stepSubLineCont}>
+                <div className={styles.stepSubLine}></div>
+              </div>
+              <div className={styles.stepSub}>Шаг 3</div>
+              <div className={styles.stepSubEmpty}></div>
+            </div>
+            <h3 className={styles.stepTitle}>
+              Моментально получи <span>бесконечное</span> количество уникальных гипер-персонифицированных видео с любыми другими словами без лишних проблем
+            </h3>
+            <div className={classNames(styles.stepVideo)}>
+              <Image alt="nice" src="/table_image.png" fill className={styles.stepVideoImage} />
+            </div>
+          </section>
+        )}
+
+        <section className={classNames(styles.contentOffset, styles.step)}>
+          <div className={styles.stepSubCont}>
+            <div className={styles.stepSubLineCont}>
+              <div className={styles.stepSubLine}></div>
+            </div>
+            <div className={styles.stepSub}>{firstTab ? "Шаг 4" : "Шаг 3"}</div>
+            <div className={styles.stepSubEmpty}></div>
+          </div>
+          <h3 className={styles.stepTitle}>Получи астрономический ROI используя персонифицированное видео общение с клиентами в любом коммуникационном канале</h3>
+          <div className={styles.stepTabsContainer}>
+            <div className={styles.stepTabs}>
+              {tabs.map((tab, i) => (
+                <div key={tab.key} className={classNames(styles[tab.key], styles.stepTabsTab, { [styles.stepTabsTabActive]: i === activeTabIndex })} onClick={() => setActiveTabIndex(i)}>
+                  {tab.text}
+                </div>
+              ))}
+            </div>
+            <div className={classNames(styles.stepTabsContent, styles[`stepTabsContent${activeTabIndex + 1}`])} />
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,6 @@ import { ExampleSlider } from "./components/ExampleSlider/ExampleSlider";
 import { Interest } from "./components/Interest/Interest";
 import { Feedback } from "./components/Feedback/Feedback";
 import { Footer } from "./components/Footer/Footer";
-import Link from "next/link";
 
 export default function Home() {
   return (
