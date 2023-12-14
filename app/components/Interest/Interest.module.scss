@@ -10,7 +10,9 @@
   justify-content: center;
   flex-direction: column;
   padding: 0 24px;
-
+  @media screen and (max-width: 1180px) {
+    background-size: cover;
+  }
   @media screen and (max-width: 600px) {
     height: 700px;
   }

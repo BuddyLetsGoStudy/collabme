@@ -50,6 +50,8 @@ export const HowItWorks = () => {
         </div>
       </div>
       <div className={classNames(styles.tabContent, { [styles.tabContentWhite]: !firstTab })}>
+        <div className={styles.iconCamera} />
+        <div className={styles.iconObjective} />
         <section className={classNames(styles.step)}>
           <div className={styles.stepSubCont}>
             <div className={styles.stepSubLineCont}>

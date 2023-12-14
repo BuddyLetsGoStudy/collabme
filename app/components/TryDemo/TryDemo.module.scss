@@ -9,6 +9,7 @@
 }
 .video {
   &Section {
+    position: relative;
     display: flex;
     padding: 120px 24px;
     @media screen and (max-width: 1180px) {
@@ -214,4 +215,26 @@
       width: 100%;
     }
   }
+}
+
+.line {
+  position: absolute;
+  background-image: url("../../../public/line1.svg");
+  background-size: cover;
+  width: 135px;
+  height: 341px;
+  bottom: -200px;
+  right: 0px;
+  z-index: -1;
+}
+
+.aiIcon {
+  background-image: url("../../../public/iconAI.svg");
+  background-size: cover;
+  width: 36px;
+  height: 36px;
+  transform: rotate(-10.627deg);
+  position: absolute;
+  right: 14px;
+  top: 4px;
 }

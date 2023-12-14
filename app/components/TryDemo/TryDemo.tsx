@@ -96,6 +96,9 @@ export default function TryDemo() {
       <div className={styles.videoVideo}>
         <Image alt="nice" src="/video.png" fill className={styles.videoVideoImage} />
       </div>
+      <div className={styles.line}>
+        <div className={styles.aiIcon} />
+      </div>
     </section>
   );
 }

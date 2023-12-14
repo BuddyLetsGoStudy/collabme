@@ -142,6 +142,7 @@
   border-bottom: 2px solid #bb2749;
   border-left: 2px solid #bb2749;
   background-color: #bb2749;
+  position: relative;
   @media screen and (max-width: 600px) {
     padding: 0 22px 60px;
     border-radius: 0px 0px 24px 24px;
@@ -381,4 +382,27 @@
       }
     }
   }
+}
+
+.iconCamera {
+  background-image: url("../../../public/iconCamera.svg");
+  background-size: cover;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -16px;
+  left: 3px;
+  z-index: 69;
+}
+
+.iconObjective {
+  background-image: url("../../../public/iconObjective.svg");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -18px;
+  right: 5px;
+  z-index: 69;
 }

@@ -3,6 +3,14 @@
   max-width: 1440px;
   margin: auto;
   padding-top: 40px;
+  @media screen and (max-width: 1180px) {
+    background-image: url("../../../public/slider-back.svg");
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid rgba(204, 96, 40, 0.2);
+
+    border-bottom: 1px solid rgba(204, 96, 40, 0.2);
+  }
 }
 .image {
   width: 50%;
