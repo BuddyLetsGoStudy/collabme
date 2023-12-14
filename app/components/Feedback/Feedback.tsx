@@ -23,7 +23,7 @@ export const Feedback = () => {
     <section className={styles.section}>
       <div className={styles.title}>Отзывы</div>
       <div className={styles.slider}>
-        <Swiper ref={sliderRef} slidesPerView={"auto"} centeredSlides={true} spaceBetween={20} loop onSlideChange={() => console.log("slide change")} onSwiper={(swiper) => console.log(swiper)}>
+        <Swiper ref={sliderRef} slidesPerView={"auto"} centeredSlides={true} spaceBetween={20} loop>
           <SwiperSlide className={styles.sliderCardCont}>
             {({ isActive }) => (
               <div className={classNames(styles.slide, { [styles.slideActive]: isActive })}>

@@ -27,12 +27,15 @@
     margin-top: 40px;
     max-width: 100%;
     height: 141px;
-
+    padding: 0 20px;
     @media screen and (max-width: 600px) {
       position: sticky;
       top: 0;
       z-index: 69;
       margin-top: 12px;
+      overflow: hidden;
+      height: 99px !important;
+      border-bottom: 2px solid #bb2749;
     }
   }
   &Tab {
@@ -52,6 +55,12 @@
       height: auto;
       padding: 24px;
     }
+
+    @media screen and (max-width: 600px) {
+      min-width: 85%;
+      height: 96px !important;
+    }
+
     &White {
       border-top: 2px solid #bb2749;
       border-right: 2px solid #bb2749;
@@ -61,12 +70,18 @@
     }
     &Selected {
       height: 141px;
+      @media screen and (max-width: 600px) {
+        height: unset;
+      }
     }
     &Text {
       font-size: 16px;
       font-weight: 500;
       line-height: 140%;
       max-width: 340px;
+      @media screen and (max-width: 600px) {
+        font-size: 14px;
+      }
     }
 
     &Icon {
@@ -269,10 +284,27 @@
     display: flex;
     flex-direction: column;
     row-gap: 16px;
+    @media screen and (max-width: 1180px) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      margin-bottom: 24px;
+      column-gap: 12px;
+    }
+
     &Container {
       display: flex;
       margin-top: 40px;
       column-gap: 101px;
+      @media screen and (max-width: 1180px) {
+        flex-wrap: wrap;
+        width: calc(100% + 85px);
+      }
+
+      @media screen and (max-width: 600px) {
+        width: calc(100% + 22px);
+      }
     }
     &Tab {
       font-size: 16px;
@@ -284,6 +316,14 @@
       color: white;
       transition: 0.3s;
       cursor: pointer;
+      min-width: 403px;
+      @media screen and (max-width: 1180px) {
+        min-width: 240px;
+        align-items: center;
+        display: flex;
+        padding: 0px 20px;
+        height: 46px;
+      }
       &Active {
         background: rgba(255, 248, 244, 0.25);
         border-bottom-color: #fff;
@@ -293,10 +333,21 @@
       min-height: 405;
       flex-grow: 1;
       border-radius: 12px;
-      background: #f3f3f3;
       background-size: cover;
       background-position: center;
+      &Image {
+        object-fit: contain;
+        width: 100% !important;
+        position: relative !important;
+        height: unset !important;
+      }
+      @media screen and (max-width: 1180px) {
+        margin-right: 85px;
+      }
 
+      @media screen and (max-width: 600px) {
+        margin-right: 22px;
+      }
       @for $i from 1 through 7 {
         &#{$i} {
           background-image: url("../../../public/contentTab#{$i}.png");

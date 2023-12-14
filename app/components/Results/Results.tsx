@@ -48,10 +48,18 @@ export const Results = () => {
             }}
             modules={[Autoplay]}
             loop={true}
-            spaceBetween={200}
+            spaceBetween={30}
             slidesPerView={"auto"}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+              600: {
+                spaceBetween: 100,
+              },
+              1200: {
+                spaceBetween: 200,
+              },
+            }}
           >
             {slides.map((slide, i) => (
               <SwiperSlide key={slide.title} className={styles.slideCont}>

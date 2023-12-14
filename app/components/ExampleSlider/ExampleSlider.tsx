@@ -257,6 +257,7 @@ export const ExampleSlider = () => {
             centeredSlides={true}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
+            className={styles.swiper}
           >
             {currentSlides?.map((slide) => (
               <SwiperSlide key={slide.title} className={styles.sliderCardCont}>

@@ -2,7 +2,7 @@
 import styles from "./HowItWorks.module.scss";
 import classNames from "classnames";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const tabs = [
   { text: "Тригерные рассылки", key: "trigger" },
@@ -23,12 +23,22 @@ export const HowItWorks = () => {
   const [firstTab, setFirstTab] = useState<boolean>(true);
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
 
+  const tabsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (tabsRef.current) {
+      const el = tabsRef.current;
+      if (firstTab) el.scrollLeft = -el.scrollWidth;
+      else el.scrollLeft = el.scrollWidth;
+    }
+  }, [firstTab]);
+
   return (
     <div className={styles.howSectionCont} id={"howitworks"}>
       <section className={classNames(styles.howSection)}>
         <h2 className={styles.howTitle}>Как это работает?</h2>
       </section>
-      <div className={styles.howTabs}>
+      <div className={styles.howTabs} ref={tabsRef}>
         <div className={classNames(styles.howTab, { [styles.howTabSelected]: firstTab })} onClick={() => setFirstTab(true)}>
           <div className={styles.howTabText}>Посмотреть для компаний с большим количеством клиентов и данных</div>
 
@@ -106,7 +116,9 @@ export const HowItWorks = () => {
                 </div>
               ))}
             </div>
-            <div className={classNames(styles.stepTabsContent, styles[`stepTabsContent${activeTabIndex + 1}`])} />
+            <div className={classNames(styles.stepTabsContent)}>
+              <Image alt="nice" src={`/contentTab${activeTabIndex + 1}.png`} fill className={styles.stepTabsContentImage} />
+            </div>
           </div>
         </section>
       </div>

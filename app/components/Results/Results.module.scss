@@ -8,6 +8,7 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
+  padding: 24px;
 }
 .title {
   color: #333;
@@ -16,13 +17,22 @@
   font-weight: 700;
   line-height: normal;
   margin-right: 31px;
-  margin-bottom: 24px;
+  @media screen and (max-width: 1180px) {
+    font-size: 46px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 28px;
+  }
 }
 
 .buttons {
   display: flex;
   column-gap: 12px;
   align-items: center;
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 }
 
 .button {
@@ -49,6 +59,9 @@
     background-image: url("../../../public/slider-back.svg");
     background-size: 102%;
     background-position: center;
+    @media screen and (max-width: 600px) {
+      height: 426px;
+    }
   }
   display: flex;
   width: 100%;
@@ -56,6 +69,10 @@
   margin: auto;
   padding: 60px 0;
   column-gap: 204px;
+  @media screen and (max-width: 600px) {
+    padding: 80px 0;
+    column-gap: 30px;
+  }
 }
 
 .slide {
@@ -73,12 +90,18 @@
     -webkit-text-fill-color: rgba(0, 0, 0, 0);
     transition: 0.5s;
     margin-bottom: 24px;
+    @media screen and (max-width: 600px) {
+      font-size: 128px;
+    }
     &Sub {
       max-width: 304px;
       color: #fff;
       font-size: 16px;
       font-weight: 500;
       line-height: 140%;
+      @media screen and (max-width: 600px) {
+        max-width: 267px;
+      }
     }
   }
   &Active {

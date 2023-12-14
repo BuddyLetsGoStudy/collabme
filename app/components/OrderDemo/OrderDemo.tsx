@@ -6,6 +6,7 @@ import styles from "./OrderDemo.module.scss";
 import { animated, useSpring } from "@react-spring/web";
 import ReactInputMask from "react-input-mask";
 import classNames from "classnames";
+import Image from "next/image";
 
 export const OrderDemo = () => {
   const [userInfo, setUserInfo] = useState({ email: "", phone: "" });
@@ -30,10 +31,17 @@ export const OrderDemo = () => {
 
   return (
     <section className={styles.cont}>
-      <div className={styles.image} />
+      <div className={styles.image}>
+        <Image alt="dama" src="/dama.png" fill className={styles.imageImage} />
+      </div>
       <div className={styles.form}>
         {success ? (
-          <div className={styles.success}>Спасибо за интерес к нашему продукту!</div>
+          <>
+            <div className={styles.imageMobile}>
+              <Image alt="dama" src="/dama.png" fill className={styles.imageMobileImage} />
+            </div>
+            <div className={styles.success}>Спасибо за интерес к нашему продукту!</div>
+          </>
         ) : (
           <>
             <div className={styles.title}>Закажи Демо</div>
@@ -46,7 +54,9 @@ export const OrderDemo = () => {
                 Я согласен с <a href="#">Политика конфиденциальности</a>
               </div>
             </div>
-            <Button onClick={submit}>Дальше</Button>
+            <Button onClick={submit} className={styles.buttonchik}>
+              Дальше
+            </Button>
           </>
         )}
       </div>

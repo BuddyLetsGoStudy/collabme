@@ -1,5 +1,8 @@
 .section {
   padding: 120px 0 80px;
+  @media screen and (max-width: 600px) {
+    padding: 80px 0;
+  }
 }
 
 .title {
@@ -8,6 +11,9 @@
   font-size: 64px;
   font-weight: 700;
   margin-bottom: 24px;
+  @media screen and (max-width: 600px) {
+    font-size: 36px;
+  }
 }
 
 .slider {
@@ -30,6 +36,17 @@
   flex-direction: column;
   opacity: 0.4;
   transition: 0.5s;
+  box-sizing: border-box;
+  @media screen and (max-width: 1180px) {
+    width: 550px;
+    padding: 64px;
+    height: auto;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 24px;
+    width: 300px;
+    height: 398px;
+  }
   &Active {
     opacity: 1;
   }
@@ -39,6 +56,15 @@
     font-weight: 400;
     line-height: 140%;
     margin-bottom: 38px;
+
+    @media screen and (max-width: 600px) {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 11;
+      white-space: pre-wrap;
+      height: 212px;
+    }
   }
 
   &Company {
@@ -46,8 +72,8 @@
     display: flex;
     align-items: center;
     &Icon {
-      width: 64px;
-      height: 64px;
+      min-width: 64px;
+      min-height: 64px;
       background-size: cover;
       border-radius: 50%;
       &RealState {
@@ -62,17 +88,27 @@
     }
     &Text {
       margin-left: 12px;
+      @media screen and (max-width: 600px) {
+        margin-left: 21px;
+      }
       &Title {
         color: #000;
         font-size: 14px;
         font-weight: 500;
         line-height: 140%;
+        @media screen and (max-width: 600px) {
+          font-size: 12px;
+        }
       }
       &Sub {
         font-size: 14px;
         font-weight: 400;
         line-height: 140%;
         color: rgba(0, 0, 0, 0.4);
+        @media screen and (max-width: 600px) {
+          margin-top: 4px;
+          font-size: 12px;
+        }
       }
     }
   }
