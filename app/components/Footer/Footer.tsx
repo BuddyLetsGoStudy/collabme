@@ -13,7 +13,7 @@ export const Footer = () => {
             <div className={styles.feedbackPhone}>Заказать звонок</div>
             <div className={styles.feedbackEmail}>Обратная связь</div>
           </div>
-          <div className={styles.social}>
+          {/* <div className={styles.social}>
             <div className={styles.socialText}>Мы в социальных сетях</div>
             <div className={styles.socialIcons}>
               <div className={styles.socialFb}></div>
@@ -21,7 +21,7 @@ export const Footer = () => {
               <div className={styles.socialTg}></div>
               <div className={styles.socialVk}></div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className={styles.secondRow}>
           <div className={styles.copyright}>2023 • COLLABME.AI • все права защищены</div>

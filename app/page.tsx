@@ -23,14 +23,14 @@ export default function Home() {
               <div className={styles.logoTitle}>Collabme</div>
             </div>
 
-            <div style={{ display: "flex" }}>
+            {/* <div style={{ display: "flex" }}>
               <Button className={styles.navbarButtonLogin} outline={true} size="sm" style={{ marginRight: "8px" }}>
                 Войти
               </Button>
               <Button className={styles.navbarButtonReg} size="sm">
                 Регистрация
               </Button>
-            </div>
+            </div> */}
           </div>
         </nav>
         <section style={{ position: "relative" }}>
@@ -62,7 +62,7 @@ export default function Home() {
         <Results />
         <ExampleSlider />
         <Interest />
-        <Feedback />
+        {/* <Feedback /> */}
       </main>
       <Footer />
     </>

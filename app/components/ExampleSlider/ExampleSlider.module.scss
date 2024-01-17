@@ -6,6 +6,7 @@
 }
 .swiper {
   padding-bottom: 64px;
+  width: 100% !important;
   @media screen and (max-width: 600px) {
     padding-bottom: 36px;
   }
@@ -38,6 +39,7 @@
     background: #fff;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     @media screen and (max-width: 600px) {
       padding: 12px 12px 24px;
       width: 300px;
@@ -48,7 +50,7 @@
       width: 339px;
       height: 187px;
       border-radius: 12px;
-      background: url("../../../public/sliderExamples1.png"), lightgray 50% / cover no-repeat;
+      background-size: cover;
       box-shadow: 10px 10px 0px 0px #cc6028, 10px 10px 0px 0px #cc6028, 10px 10px 0px 0px #cc6028;
       margin-bottom: 24px;
       @media screen and (max-width: 600px) {
@@ -61,6 +63,13 @@
       font-size: 24px;
       font-weight: 500;
       margin-bottom: 12px;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      white-space: pre-wrap;
+      height: 28px;
     }
     &Description {
       color: #000;
@@ -68,6 +77,13 @@
       font-style: normal;
       font-weight: 400;
       line-height: 150%;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      white-space: pre-wrap;
+      height: 126px;
 
       @media screen and (max-width: 600px) {
         height: 63px;
