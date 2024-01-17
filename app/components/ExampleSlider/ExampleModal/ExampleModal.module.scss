@@ -1,0 +1,51 @@
+.background {
+  background-color: grey;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modal {
+  padding: 60px 120px 100px;
+  border-radius: 100px 100px 0px 0px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  color: #333;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.content {
+  margin-top: 24px;
+  display: flex;
+}
+
+.video {
+  margin-right: 60px;
+}
+
+.text {
+}
+.textTitle {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.description {
+  color: #333;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 200%;
+}
