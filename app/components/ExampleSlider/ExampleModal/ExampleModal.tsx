@@ -7,7 +7,7 @@ export const ExampleModal = ({ title, description, keys, name, closeModal }: any
         <div className={styles.title}>{title}</div>
         <div className={styles.content}>
           <div className={styles.video}>
-            <video style={{ width: "100%" }} controls>
+            <video style={{ width: "100%" }} autoPlay>
               <source src={`/examples/${name}.mp4`} />
             </video>
           </div>

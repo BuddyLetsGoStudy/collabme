@@ -19,6 +19,12 @@
   width: 100%;
   box-sizing: border-box;
   position: relative;
+  overflow: auto;
+  max-height: 95%;
+  @media screen and (max-width: 600px) {
+    padding: 60px 24px;
+    border-radius: 24px 24px 0px 0px;
+  }
 }
 
 .title {
@@ -26,22 +32,37 @@
   font-size: 36px;
   font-weight: 700;
   line-height: 150%;
+  @media screen and (max-width: 600px) {
+    font-size: 28px;
+  }
 }
 
 .content {
   margin-top: 24px;
   display: flex;
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+  }
 }
 
 .video {
   margin-right: 60px;
   flex-grow: 1;
   width: 50%;
+  @media screen and (max-width: 950px) {
+    width: 100%;
+  }
+  & > video {
+    border-radius: 12px;
+  }
 }
 
 .text {
   flex-grow: 1;
   width: 50%;
+  @media screen and (max-width: 950px) {
+    width: 100%;
+  }
 }
 
 .textTitle {
@@ -49,6 +70,9 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 150%;
+  @media screen and (max-width: 950px) {
+    display: none;
+  }
 }
 
 .description {
@@ -62,7 +86,7 @@
   & > span {
     border-bottom: 1px solid #bb2749;
     background: #fff8f4;
-    padding: 0 8px;
+    padding: 4px 2px;
     color: #333;
     font-size: 14px;
     font-style: italic;
@@ -78,11 +102,14 @@
   font-weight: 700;
   line-height: 150%;
   margin-top: 60px;
+  @media screen and (max-width: 600px) {
+    margin-top: 47px;
+  }
 }
 
 .keys {
   display: flex;
-  column-gap: 5px;
+  gap: 5px;
   flex-wrap: wrap;
   margin-top: 12px;
 }
@@ -105,4 +132,9 @@
   top: 92px;
   right: 72px;
   cursor: pointer;
+
+  @media screen and (max-width: 600px) {
+    top: 12px;
+    right: 12px;
+  }
 }

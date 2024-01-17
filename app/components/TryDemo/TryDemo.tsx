@@ -94,7 +94,7 @@ export default function TryDemo() {
       <div className={classNames(styles.videoContentTextSub, styles.byebye)}>Посмотри в действии</div>
 
       <div className={styles.videoVideo}>
-        <Image alt="nice" src="/video.png" fill className={styles.videoVideoImage} />
+        <Image alt="nice" src="/cool.jpg" fill className={styles.videoVideoImage} />
       </div>
       <div className={styles.line}>
         <div className={styles.aiIcon} />
