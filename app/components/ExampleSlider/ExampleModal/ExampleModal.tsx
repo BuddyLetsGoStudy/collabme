@@ -13,7 +13,9 @@ export const ExampleModal = ({ title, description, keys }: any) => {
             <div className={styles.keysTitle}>Динамичные переменные</div>
             <div className={styles.keys}>
               {keys.map((key: any) => (
-                <div className={styles.keysBlock}>#{key}</div>
+                <div key={key} className={styles.keysBlock}>
+                  #{key}
+                </div>
               ))}
             </div>
           </div>
