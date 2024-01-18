@@ -7,6 +7,7 @@ import { animated, useSpring } from "@react-spring/web";
 import ReactInputMask from "react-input-mask";
 import classNames from "classnames";
 import Image from "next/image";
+import Link from "next/link";
 
 export const OrderDemo = () => {
   const [userInfo, setUserInfo] = useState({ email: "", phone: "" });
@@ -51,7 +52,7 @@ export const OrderDemo = () => {
             <div className={styles.policy}>
               <div onClick={() => setCheckbox((prevState) => !prevState)} className={classNames(styles.policyCheck, { [styles.policyCheckInactive]: !checkbox })} />{" "}
               <div className={styles.policyText}>
-                Я согласен с <a href="#">Политика конфиденциальности</a>
+                Я согласен с <Link href="/policy.pdf">Политика конфиденциальности</Link>
               </div>
             </div>
             <Button onClick={submit} className={styles.buttonchik}>

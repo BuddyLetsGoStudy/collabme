@@ -7,6 +7,7 @@ import styles from "./TryDemo.module.scss";
 import classNames from "classnames";
 import InputMask from "react-input-mask";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TryDemo() {
   const [screen, setScreen] = useState<number>(0);
@@ -69,7 +70,7 @@ export default function TryDemo() {
                 <div className={styles.policy}>
                   <div className={classNames(styles.policyCheck, { [styles.policyCheckInactive]: !checkbox })} onClick={() => setCheckbox((prevState) => !prevState)} />
                   <div className={styles.policyText}>
-                    Я согласен с <a href="#">Политика конфиденциальности</a>
+                    Я согласен с <Link href="/policy.pdf">Политика конфиденциальности</Link>
                   </div>
                 </div>
               </div>

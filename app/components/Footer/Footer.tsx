@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -26,12 +27,12 @@ export const Footer = () => {
         <div className={styles.secondRow}>
           <div className={styles.copyright}>2023 • COLLABME.AI • все права защищены</div>
           <div className={styles.policies}>
-            <a href="#" className={styles.policiesItem}>
+            <Link href="/usage.pdf" className={styles.policiesItem}>
               Политика обработки данных
-            </a>
-            <a href="#" className={styles.policiesItem}>
+            </Link>
+            <Link href="/policy.pdf" className={styles.policiesItem}>
               Политика конфиденциальности
-            </a>
+            </Link>
           </div>
         </div>
       </div>

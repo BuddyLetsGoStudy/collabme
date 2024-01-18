@@ -4,6 +4,7 @@ import styles from "./Interest.module.scss";
 import classNames from "classnames";
 import { useSpring, animated } from "@react-spring/web";
 import ReactInputMask from "react-input-mask";
+import Link from "next/link";
 
 export const Interest = () => {
   const [step, setStep] = useState(0);
@@ -54,7 +55,7 @@ export const Interest = () => {
           <animated.div className={styles.policy}>
             <div className={classNames(styles.checkbox, { [styles.checkboxInactive]: !checkbox })} onClick={() => setCheckbox((prevState) => !prevState)} />
             <div className={styles.policyText}>
-              Я согласен с <a href="#"> Политикой конфиденциальности</a>
+              Я согласен с <Link href="/policy.pdf"> Политикой конфиденциальности</Link>
             </div>
           </animated.div>
           <animated.div className={styles.button} onClick={confirm}>
