@@ -80,7 +80,9 @@ export const HowItWorks = () => {
             Добавь видео на платформу и выдели <span>любые</span> слова для создания шаблона под персонализированные видео для каждого пользователя и клиента
           </h3>
           <div className={classNames(styles.stepVideo)}>
-            <Image alt="nice" src="/stepvideo2.png" fill className={styles.stepVideoImage} />
+            <video style={{ width: "100%" }} controls>
+              <source src={`/examples/014.mp4`} />
+            </video>
           </div>
         </section>
         {firstTab && (

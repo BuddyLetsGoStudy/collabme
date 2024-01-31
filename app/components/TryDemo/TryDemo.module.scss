@@ -240,3 +240,26 @@
   right: 14px;
   top: 4px;
 }
+
+#txt,
+#hide {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+#txt {
+  border: none;
+  min-width: 200px;
+}
+
+#txt:focus-visible {
+  outline: none;
+}
+
+#hide {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  white-space: pre;
+}

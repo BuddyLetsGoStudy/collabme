@@ -10,6 +10,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function TryDemo() {
+  const hideRef = useRef<any>(null);
+  const inputNameRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
   const [screen, setScreen] = useState<number>(0);
 
   const [data, setData] = useState({
@@ -19,6 +22,15 @@ export default function TryDemo() {
   });
 
   const [checkbox, setCheckbox] = useState(true);
+
+  const resize = () => {
+    if (inputNameRef.current) {
+      hideRef.current.textContent = data.name;
+      inputNameRef.current.style.width = hideRef.current.offsetWidth + "px";
+    }
+  };
+
+  resize();
 
   const changeData = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
@@ -38,8 +50,6 @@ export default function TryDemo() {
 
     setScreen((prevState) => prevState + 1);
   };
-  const inputNameRef = useRef<HTMLInputElement>(null);
-  const emailInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (inputNameRef.current) {
@@ -53,11 +63,23 @@ export default function TryDemo() {
     <section className={cls(styles.contentOffset, styles.videoSection)}>
       <div className={styles.videoContent}>
         <div className={styles.videoContentText}>
-          <div className={styles.videoContentTextSub}>Посмотри в действии</div>
+          <div className={styles.videoContentTextSub}>Для того, чтобы получить персонализированное видео, отправьте заявку</div>
           {screen === 0 && (
             <div className={styles.videoContentTextContainer}>
               <div className={styles.videoContentTextContainerText}>Привет</div>
-              <input onChange={changeData} name="name" placeholder="Введите свое имя" type="text" className={styles.videoContentTextContainerInput} ref={inputNameRef}></input>
+              <span ref={hideRef} id="hide"></span>
+              <input
+                id="txt"
+                onChange={(e) => {
+                  changeData(e);
+                  resize();
+                }}
+                name="name"
+                placeholder="Введите свое имя"
+                type="text"
+                className={styles.videoContentTextContainerInput}
+                ref={inputNameRef}
+              ></input>
               <div className={styles.videoContentTextContainerTextBottom}>У меня есть персональное видео для тебя!</div>
             </div>
           )}
@@ -92,7 +114,7 @@ export default function TryDemo() {
           )}
         </div>
       </div>
-      <div className={classNames(styles.videoContentTextSub, styles.byebye)}>Посмотри в действии</div>
+      <div className={classNames(styles.videoContentTextSub, styles.byebye)}>Для того, чтобы получить персонализированное видео, отправьте заявку</div>
 
       <div className={styles.videoVideo}>
         <Image alt="nice" src="/cool.jpg" fill className={styles.videoVideoImage} />

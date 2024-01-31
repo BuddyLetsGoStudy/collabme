@@ -25,7 +25,7 @@ export const Footer = () => {
           </div> */}
         </div>
         <div className={styles.secondRow}>
-          <div className={styles.copyright}>2023 • COLLABME.AI • все права защищены</div>
+          <div className={styles.copyright}>2024 • COLLABME.AI • все права защищены</div>
           <div className={styles.policies}>
             <Link href="/usage.pdf" className={styles.policiesItem}>
               Политика обработки данных
