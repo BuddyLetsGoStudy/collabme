@@ -10,7 +10,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function TryDemo() {
-  const hideRef = useRef<any>(null);
   const inputNameRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const [screen, setScreen] = useState<number>(0);
@@ -22,15 +21,6 @@ export default function TryDemo() {
   });
 
   const [checkbox, setCheckbox] = useState(true);
-
-  const resize = () => {
-    if (inputNameRef.current) {
-      hideRef.current.textContent = data.name;
-      inputNameRef.current.style.width = hideRef.current.offsetWidth + "px";
-    }
-  };
-
-  resize();
 
   const changeData = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
@@ -67,12 +57,10 @@ export default function TryDemo() {
           {screen === 0 && (
             <div className={styles.videoContentTextContainer}>
               <div className={styles.videoContentTextContainerText}>Привет</div>
-              <span ref={hideRef} id="hide"></span>
               <input
                 id="txt"
                 onChange={(e) => {
                   changeData(e);
-                  resize();
                 }}
                 name="name"
                 placeholder="Введите свое имя"
